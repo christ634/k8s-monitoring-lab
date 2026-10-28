@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: fragile-api-monitor
+  namespace: default
+  labels:
+    release: monitoring  # Esta etiqueta es la que busca Prometheus
+spec:
+  selector:
+    matchLabels:
+      app: fragile-api   # Esto debe coincidir con la etiqueta de tu Servicio
+  endpoints:
+  - port: http           # El nombre del puerto que configuramos antes
+    interval: 15s        # Cada cuánto tiempo Prometheus pasará a buscar datos

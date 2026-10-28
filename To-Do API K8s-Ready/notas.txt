@@ -1,0 +1,7 @@
+# Para codificar el usuario:
+echo -n 'todo_admin' | base64
+# Resultado: dG9kb19hZG1pbg==
+
+# Para codificar la contraseña:
+echo -n 'MiSuperPassword123!' | base64
+# Resultado: TWlTdXBlclBhc3N3b3JkMTIzIQ==
